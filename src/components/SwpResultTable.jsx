@@ -1,11 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row, Table } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
+import axios from "axios";
 
 const SwpResultTable = () => {
   const { state } = useLocation();
   const formData = state?.formData;
   console.log("formdata: ", formData);
+  const [result, setResult] = useState({});
+
+  const withdrawalsData = {
+    initial_investment: formData.initialInvestment,
+    withdrawal_amount: 1000,
+    withdrawal_frequency: "monthly",
+    num_withdrawals: formData.swpPeriod * 12,
+    inflation_rate: 0.075,
+    roi: formData.rateOfReturn * 0.01,
+  };
+
+  useEffect(() => {
+    axios
+      .post(
+        "https://acumenn-backend1.onrender.com/api/investment/swp/withdrawals",
+        withdrawalsData
+      )
+      .then((response) => {
+        console.log("withdraw", withdrawalsData);
+        setResult(response.data);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+    // eslint-disable-next-line
+  }, []);
   return (
     <>
       <Container>
@@ -81,11 +109,13 @@ const SwpResultTable = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>25</td>
-                <td>₹ 88,725</td>
-                <td>₹ 96,97,309</td>
-              </tr>
+              {result.results?.map((result) => (
+                <tr key={result.current_investment}>
+                  <td>25</td>
+                  <td>{result.withdrawal}</td>
+                  <td>{result.current_investment}</td>
+                </tr>
+              ))}
             </tbody>
           </Table>
         }
