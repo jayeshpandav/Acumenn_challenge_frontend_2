@@ -119,15 +119,16 @@ const SipReqForm = () => {
         <Form.Check
           inline
           label="Yes"
-          // name="group1"
+          name="group1"
           type="radio"
           id={`inline-radio-1`}
         />
         <Form.Check
           inline
           label="No"
-          // name="group1"
+          name="group1"
           type="radio"
+          defaultChecked
           id={`inline-radio-2`}
         />
       </Form.Group>
@@ -154,15 +155,16 @@ const SipReqForm = () => {
         <Form.Check
           inline
           label="Yes"
-          // name="group1"
+          name="group2"
           type="radio"
           id={`inline-radio-1`}
         />
         <Form.Check
           inline
           label="No"
-          // name="group1"
+          name="group2"
           type="radio"
+          defaultChecked
           id={`inline-radio-2`}
         />
       </Form.Group>
@@ -171,7 +173,7 @@ const SipReqForm = () => {
           style={{ width: "20vw" }}
           className="text-nowrap mx-3 my-auto h6 "
         >
-          <Form.Check type="checkbox" label="Add client Name" />
+          <Form.Check disabled type="checkbox" label="Add client Name" />
         </Form.Label>
         <InputGroup className=" ">
           <Form.Control aria-label="Amount (to the nearest dollar)" disabled />
@@ -191,14 +193,15 @@ const SipReqForm = () => {
         <Form.Check
           inline
           label="Summary Report"
-          // name="group1"
+          name="group3"
           type="radio"
           id={`inline-radio-1`}
         />
         <Form.Check
           inline
           label="Detailed Report"
-          // name="group1"
+          name="group3"
+          defaultChecked
           type="radio"
           id={`inline-radio-2`}
         />

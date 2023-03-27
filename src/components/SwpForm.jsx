@@ -76,19 +76,21 @@ const SwpForm = () => {
         <Form.Check
           inline
           label="Yes"
-          // name="group1"
+          name="group1"
           type="radio"
           id={`inline-radio-1`}
         />
         <Form.Check
           inline
           label="No"
-          // name="group1"
+          name="group1"
+          defaultChecked
           type="radio"
           id={`inline-radio-2`}
         />
         <InputGroup className=" ">
           <Form.Control
+            disabled
             onChange={handleChange}
             type="number"
             aria-label="Amount (to the nearest dollar)"
@@ -180,14 +182,15 @@ const SwpForm = () => {
         <Form.Check
           inline
           label="Yes"
-          // name="group1"
+          name="group2"
+          defaultChecked
           type="radio"
           id={`inline-radio-1`}
         />
         <Form.Check
           inline
           label="No"
-          // name="group1"
+          name="group2"
           type="radio"
           id={`inline-radio-2`}
         />
@@ -204,7 +207,7 @@ const SwpForm = () => {
             onChange={handleChange}
             type="number"
             aria-label="Amount (to the nearest dollar)"
-            disabled
+            // disabled
             name="inflationRate"
             defaultValue={7.5}
           />
@@ -222,14 +225,15 @@ const SwpForm = () => {
         <Form.Check
           inline
           label="Yes"
-          // name="group1"
+          name="group3"
           type="radio"
           id={`inline-radio-1`}
         />
         <Form.Check
           inline
           label="No"
-          // name="group1"
+          name="group3"
+          defaultChecked
           type="radio"
           id={`inline-radio-2`}
         />
@@ -261,6 +265,7 @@ const SwpForm = () => {
         </Form.Label>
         <InputGroup className=" ">
           <Form.Control
+            disabled
             onChange={handleChange}
             type="number"
             aria-label="Amount (to the nearest dollar)"
@@ -276,6 +281,7 @@ const SwpForm = () => {
         </Form.Label>
         <InputGroup className=" ">
           <Form.Control
+            disabled
             onChange={handleChange}
             type="number"
             aria-label="Amount (to the nearest dollar)"
@@ -293,6 +299,7 @@ const SwpForm = () => {
         </Form.Label>
         <InputGroup className=" ">
           <Form.Control
+            disabled
             onChange={handleChange}
             type="number"
             aria-label="Amount (to the nearest dollar)"
@@ -308,6 +315,7 @@ const SwpForm = () => {
         </Form.Label>
         <InputGroup className=" ">
           <Form.Control
+            disabled
             onChange={handleChange}
             type="number"
             aria-label="Amount (to the nearest dollar)"
@@ -321,7 +329,7 @@ const SwpForm = () => {
           style={{ width: "20vw" }}
           className="text-nowrap mx-3 my-auto h6 "
         >
-          <Form.Check type="checkbox" label="Add client Name" />
+          <Form.Check disabled type="checkbox" label="Add client Name" />
         </Form.Label>
         <InputGroup className=" ">
           <Form.Control
